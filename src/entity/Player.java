@@ -34,7 +34,7 @@ public class Player extends Entity {
     }
 
     public void setDefaultValues() {
-        worldX = gamePanel.tileSize * 23;
+        worldX = gamePanel.tileSize * 35;
         worldY = gamePanel.tileSize * 21;
 
         // stats

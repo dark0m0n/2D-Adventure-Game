@@ -30,7 +30,7 @@ public class AssetSetter {
     public void setMonster() {
         gamePanel.monster[0] = new MON_GreenSlime(gamePanel);
         gamePanel.monster[0].worldX = gamePanel.tileSize * 39;
-        gamePanel.monster[0].worldY = gamePanel.tileSize * 11;
+        gamePanel.monster[0].worldY = gamePanel.tileSize * 8;
 
         gamePanel.monster[1] = new MON_BlueSlime(gamePanel);
         gamePanel.monster[1].worldX = gamePanel.tileSize * 12;
