@@ -31,6 +31,7 @@ public class Player extends Entity {
 
         setDefaultValues();
         getPlayerImage();
+        getPlayerAttackImage();
     }
 
     public void setDefaultValues() {
@@ -199,5 +200,16 @@ public class Player extends Entity {
                 invincible = true;
             }
         }
+    }
+
+    public void getPlayerAttackImage() {
+        attackDown1 = setup("player/attack_down_1", gamePanel.tileSize, gamePanel.tileSize * 2);
+        attackDown2 = setup("player/attack_down_2", gamePanel.tileSize, gamePanel.tileSize * 2);
+        attackUp1 = setup("player/attack_up_1", gamePanel.tileSize, gamePanel.tileSize * 2);
+        attackUp2 = setup("player/attack_up_2", gamePanel.tileSize, gamePanel.tileSize * 2);
+        attackRight1 = setup("player/attack_right_1", gamePanel.tileSize * 2, gamePanel.tileSize);
+        attackRight2 = setup("player/attack_right_2", gamePanel.tileSize * 2, gamePanel.tileSize);
+        attackLeft1 = setup("player/attack_left_1", gamePanel.tileSize * 2, gamePanel.tileSize);
+        attackLeft2 = setup("player/attack_left_2", gamePanel.tileSize * 2, gamePanel.tileSize);
     }
 }
