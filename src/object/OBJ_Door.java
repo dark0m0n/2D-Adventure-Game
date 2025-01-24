@@ -9,7 +9,7 @@ public class OBJ_Door extends Entity {
 
         name = "Door";
         collision = true;
-        image = setup("objects/door");
+        image = setup("objects/door", gamePanel.tileSize, gamePanel.tileSize);
         
         solidArea.y = 16;
         solidArea.height = 31;

@@ -6,8 +6,11 @@ import entity.Entity;
 import main.GamePanel;
 
 public class MON_BlueSlime extends Entity {
+    GamePanel gamePanel;
+
     public MON_BlueSlime(GamePanel gamePanel) {
         super(gamePanel);
+        this.gamePanel = gamePanel;
 
         name = "Blue Slime";
         speed = 1;
@@ -25,8 +28,8 @@ public class MON_BlueSlime extends Entity {
     }
 
     public void getImage() {
-        up1 = setup("monsters/blue_slime/down_1");
-        up2 = setup("monsters/blue_slime/down_2");
+        up1 = setup("monsters/blue_slime/down_1", gamePanel.tileSize, gamePanel.tileSize);
+        up2 = setup("monsters/blue_slime/down_2", gamePanel.tileSize, gamePanel.tileSize);
         down1 = up1;
         down2 = up2;
         left1 = up1;

@@ -44,14 +44,14 @@ public class Player extends Entity {
     }
 
     public void getPlayerImage() {
-        up1 = setup("player/player_up_1");
-        up2 = setup("player/player_up_2");
-        down1 = setup("player/player_down_1");
-        down2 = setup("player/player_down_2");
-        left1 = setup("player/player_left_1");
-        left2 = setup("player/player_left_2");
-        right1 = setup("player/player_right_1");
-        right2 = setup("player/player_right_2");
+        up1 = setup("player/player_up_1", gamePanel.tileSize, gamePanel.tileSize);
+        up2 = setup("player/player_up_2", gamePanel.tileSize, gamePanel.tileSize);
+        down1 = setup("player/player_down_1", gamePanel.tileSize, gamePanel.tileSize);
+        down2 = setup("player/player_down_2", gamePanel.tileSize, gamePanel.tileSize);
+        left1 = setup("player/player_left_1", gamePanel.tileSize, gamePanel.tileSize);
+        left2 = setup("player/player_left_2", gamePanel.tileSize, gamePanel.tileSize);
+        right1 = setup("player/player_right_1", gamePanel.tileSize, gamePanel.tileSize);
+        right2 = setup("player/player_right_2", gamePanel.tileSize, gamePanel.tileSize);
     }
 
     public void update() {
