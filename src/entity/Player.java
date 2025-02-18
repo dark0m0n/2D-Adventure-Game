@@ -197,6 +197,7 @@ public class Player extends Entity {
                 gamePanel.npc[npcIndex].speak();
             } else {
                 attacking = true;
+                gamePanel.playSE(6);
             }
         }
     }
@@ -206,6 +207,7 @@ public class Player extends Entity {
             if (!invincible) {
                 hp -= gamePanel.monster[monsterIndex].damage;
                 invincible = true;
+                gamePanel.playSE(5);
             }
         }
     }
@@ -274,6 +276,8 @@ public class Player extends Entity {
             if (!gamePanel.monster[index].invincible) {
                 gamePanel.monster[index].hp -= damage;
                 gamePanel.monster[index].invincible = true;
+
+                gamePanel.playSE(7);
 
                 if (gamePanel.monster[index].hp <= 0) {
                     gamePanel.monster[index] = null;
