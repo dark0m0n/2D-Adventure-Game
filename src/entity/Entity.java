@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -35,6 +36,8 @@ public class Entity {
     public int invincibleCD = 0;
     boolean attacking = false;
     public Rectangle attackArea = new Rectangle(0, 0, 0, 0);
+    public boolean hpBarOn = false;
+    public int hpBarCD = 0;
 
     public int type;
 
@@ -115,6 +118,31 @@ public class Entity {
                     break;
             }
 
+            // monster HP bar
+            if (type == gamePanel.monsterType && hpBarOn) {
+                double hpBarScale = (double) gamePanel.tileSize / maxHp;
+                double hpBarValue = hpBarScale * hp;
+
+                g2.setColor(new Color(35, 35, 35));
+                g2.fillRect(screenX - 1, screenY + gamePanel.tileSize + 9, gamePanel.tileSize + 2,
+                        12);
+
+                g2.setColor(new Color(255, 0, 30));
+                g2.fillRect(screenX, screenY + gamePanel.tileSize + 10, (int) hpBarValue, 10);
+
+                hpBarCD++;
+
+                if (hpBarCD >= 3600) {
+                    hpBarOn = false;
+                    hpBarCD = 0;
+                }
+            }
+
+            if (invincible) {
+                hpBarOn = true;
+                hpBarCD = 0;
+            }
+
             g2.drawImage(image, screenX, screenY, null);
         }
     }
@@ -166,5 +194,10 @@ public class Entity {
                 invincibleCD = 0;
             }
         }
+    }
+
+    public void damageReaction() {
+        actionCD = 75;
+        direction = gamePanel.player.direction;
     }
 }
