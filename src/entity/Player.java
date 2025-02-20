@@ -276,6 +276,7 @@ public class Player extends Entity {
             if (!gamePanel.monster[index].invincible) {
                 gamePanel.monster[index].hp -= damage;
                 gamePanel.monster[index].invincible = true;
+                gamePanel.monster[index].damageReaction();
 
                 gamePanel.playSE(7);
 
